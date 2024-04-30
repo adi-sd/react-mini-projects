@@ -1,0 +1,40 @@
+.color-generator-component {
+    height: 100vh;
+    width: 100vw;
+
+    .buttons {
+        height: 20%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            padding: 10px 20px;
+            font-size: 15px;
+            margin: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+
+            &.selected {
+                background-color: green;
+            }
+        }
+    }
+
+    .details {
+        height: 80%;
+        width: 100%;
+
+        padding: 20% 0;
+
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 30%;
+
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1.4rem;
+    }
+}
