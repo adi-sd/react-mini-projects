@@ -2,6 +2,7 @@ import "./App.scss";
 import Accordion from "./accordion/Accordion";
 import ColorGenerator from "./color-generator/ColorGenerator";
 import StarRatings from "./star-ratings/StarRatings";
+import ImageCarousel from "./image-carousel/ImageCarousel";
 
 function App() {
     return (
@@ -12,6 +13,12 @@ function App() {
             <ColorGenerator></ColorGenerator>
             {/* Star Ratings Component*/}
             <StarRatings noOfStars={10}></StarRatings>
+            {/* Image Carousel Component */}
+            <ImageCarousel
+                imageApiUrl={"https://picsum.photos/v2/list?page=1"}
+                page={1}
+                noOfImages={12}
+            ></ImageCarousel>
         </div>
     );
 }
