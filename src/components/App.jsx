@@ -3,6 +3,7 @@ import Accordion from "./accordion/Accordion";
 import ColorGenerator from "./color-generator/ColorGenerator";
 import StarRatings from "./star-ratings/StarRatings";
 import ImageCarousel from "./image-carousel/ImageCarousel";
+import LoadMoreData from "./load-more-data/LoadMoreData";
 
 function App() {
     return (
@@ -19,6 +20,8 @@ function App() {
                 page={1}
                 noOfImages={12}
             ></ImageCarousel>
+            {/* Load MoreData Component */}
+            <LoadMoreData></LoadMoreData>
         </div>
     );
 }
