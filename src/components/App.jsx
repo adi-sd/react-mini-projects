@@ -4,6 +4,7 @@ import ColorGenerator from "./color-generator/ColorGenerator";
 import StarRatings from "./star-ratings/StarRatings";
 import ImageCarousel from "./image-carousel/ImageCarousel";
 import LoadMoreData from "./load-more-data/LoadMoreData";
+import SideMenu from "./side-menu/SideMenu";
 
 function App() {
     return (
@@ -22,6 +23,8 @@ function App() {
             ></ImageCarousel>
             {/* Load MoreData Component */}
             <LoadMoreData></LoadMoreData>
+            {/* Side Menu Component */}
+            <SideMenu></SideMenu>
         </div>
     );
 }
