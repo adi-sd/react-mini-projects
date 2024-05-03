@@ -1,0 +1,59 @@
+.qr-code-generator-component {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Courier New", Courier, monospace;
+
+    .qr-code-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        padding: 30px 20px;
+
+        border: 3px solid black;
+        border-radius: 15px;
+
+        .qr-code-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            input {
+                height: 50px;
+                font-family: "Courier New", Courier, monospace;
+                font-size: 25px;
+                padding: 0 15px;
+                border: 2px solid black;
+                border-radius: 10px;
+            }
+
+            button {
+                font-family: "Courier New", Courier, monospace;
+                padding: 10px 20px;
+                border: 2px solid black;
+                border-radius: 10px;
+                font-weight: bold;
+                font-size: 25px;
+                font: black;
+
+                &:disabled {
+                    border: 2px solid gray;
+                }
+
+                &:not([disabled]):hover {
+                    cursor: pointer;
+                    background-color: aliceblue;
+                }
+            }
+        }
+    }
+}
