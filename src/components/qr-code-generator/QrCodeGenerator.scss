@@ -9,6 +9,7 @@
     font-family: "Courier New", Courier, monospace;
 
     .qr-code-container {
+        width: 500px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -29,6 +30,7 @@
 
             input {
                 height: 50px;
+                width: 400px;
                 font-family: "Courier New", Courier, monospace;
                 font-size: 25px;
                 padding: 0 15px;
@@ -36,22 +38,28 @@
                 border-radius: 10px;
             }
 
-            button {
-                font-family: "Courier New", Courier, monospace;
-                padding: 10px 20px;
-                border: 2px solid black;
-                border-radius: 10px;
-                font-weight: bold;
-                font-size: 25px;
-                font: black;
+            .qr-code-buttons {
+                width: 400px;
+                display: flex;
+                justify-content: space-between;
 
-                &:disabled {
-                    border: 2px solid gray;
-                }
+                button {
+                    font-family: "Courier New", Courier, monospace;
+                    padding: 10px 20px;
+                    border: 2px solid black;
+                    border-radius: 10px;
+                    font-weight: bold;
+                    font-size: 25px;
+                    font: black;
 
-                &:not([disabled]):hover {
-                    cursor: pointer;
-                    background-color: aliceblue;
+                    &:disabled {
+                        border: 2px solid gray;
+                    }
+
+                    &:not([disabled]):hover {
+                        cursor: pointer;
+                        background-color: aliceblue;
+                    }
                 }
             }
         }

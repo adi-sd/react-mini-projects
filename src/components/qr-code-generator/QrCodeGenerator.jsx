@@ -20,14 +20,26 @@ function QrCodeGenerator() {
                         name="qr-code"
                         id="qr-code"
                         placeholder="Enter your value here"
+                        value={input}
                         onChange={(e) => setInput(e.target.value)}
                     />
-                    <button disabled={input && input.trim() !== "" ? false : true} onClick={handleGenerateQrCode}>
-                        Generate Code
-                    </button>
+                    <div className="qr-code-buttons">
+                        <button disabled={input && input.trim() !== "" ? false : true} onClick={handleGenerateQrCode}>
+                            Generate Code
+                        </button>
+                        <button
+                            disabled={input && input.trim() !== "" ? false : true}
+                            onClick={() => {
+                                setInput("");
+                                setQrCode("");
+                            }}
+                        >
+                            Clear
+                        </button>
+                    </div>
                 </div>
                 {qrCode && qrCode.trim() !== "" ? (
-                    <QRCode id="qr-code-value" value={qrCode} size={300} level="Q"></QRCode>
+                    <QRCode id="qr-code-value" value={qrCode} size={400} level="Q"></QRCode>
                 ) : null}
             </div>
         </div>
