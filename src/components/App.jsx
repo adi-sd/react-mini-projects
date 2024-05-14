@@ -6,6 +6,7 @@ import ImageCarousel from "./image-carousel/ImageCarousel";
 import LoadMoreData from "./load-more-data/LoadMoreData";
 import SideMenu from "./side-menu/SideMenu";
 import QrCodeGenerator from "./qr-code-generator/QrCodeGenerator";
+import DarkMode from "./dark-mode/DarkMode";
 
 function App() {
     return (
@@ -27,7 +28,9 @@ function App() {
             {/* Side Menu Component */}
             {/* <SideMenu></SideMenu> */}
             {/* QR Code Generator */}
-            <QrCodeGenerator></QrCodeGenerator>
+            {/* <QrCodeGenerator></QrCodeGenerator> */}
+            {/* Dark Mode */}
+            <DarkMode></DarkMode>
         </div>
     );
 }

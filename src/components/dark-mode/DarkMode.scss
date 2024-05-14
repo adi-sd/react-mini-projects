@@ -1,0 +1,73 @@
+.dark-mode-component {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.5s;
+
+    .dark-mode-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        border: 3px solid;
+        border-radius: 10px;
+        padding: 20px 30px;
+    }
+
+    p {
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border-width: 3px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    &[data-theme="light"] {
+        background-color: white;
+
+        p {
+            color: black;
+        }
+
+        button {
+            background-color: black;
+            border-color: white;
+            color: white;
+        }
+
+        .dark-mode-container {
+            border-color: black;
+        }
+    }
+
+    &[data-theme="dark"] {
+        background-color: black;
+
+        p {
+            color: white;
+        }
+
+        button {
+            background-color: white;
+            border-color: black;
+            color: black;
+        }
+
+        .dark-mode-container {
+            border-color: white;
+        }
+    }
+}
