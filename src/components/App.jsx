@@ -7,6 +7,7 @@ import LoadMoreData from "./load-more-data/LoadMoreData";
 import SideMenu from "./side-menu/SideMenu";
 import QrCodeGenerator from "./qr-code-generator/QrCodeGenerator";
 import DarkMode from "./dark-mode/DarkMode";
+import ScrollIndicator from "./scroll-indicator/ScrollIndicator";
 
 function App() {
     return (
@@ -30,7 +31,9 @@ function App() {
             {/* QR Code Generator */}
             {/* <QrCodeGenerator></QrCodeGenerator> */}
             {/* Dark Mode */}
-            <DarkMode></DarkMode>
+            {/* <DarkMode></DarkMode> */}
+            {/* Custom Scroll Indicator */}
+            <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}></ScrollIndicator>
         </div>
     );
 }
