@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./ScrollIndicator.scss";
+import ProductDataContainer from "./ProductDataContainer";
+import PropTypes from "prop-types";
 
 function ScrollIndicator({ url }) {
+    const scrollableDivRef = useRef(null);
     const [data, setData] = useState([]);
     const [errorMsg, setErrorMsg] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -30,9 +33,16 @@ function ScrollIndicator({ url }) {
     }
 
     function handleScrollPercentage() {
-        const alreadyScrolled = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        setScrollPercentage((alreadyScrolled / height) * 100);
+        const scrollableDiv = scrollableDivRef.current;
+        if (!scrollableDiv) {
+            return;
+        }
+        const scrollTop = scrollableDiv.scrollTop;
+        const scrollHeight = scrollableDiv.scrollHeight;
+        const clientHeight = scrollableDiv.clientHeight;
+        const scrollPercent = (scrollTop / (scrollHeight - clientHeight)) * 100;
+        // console.log(scrollPercent);
+        setScrollPercentage(scrollPercent);
     }
 
     useEffect(() => {
@@ -42,12 +52,16 @@ function ScrollIndicator({ url }) {
     }, [url]);
 
     useEffect(() => {
-        window.addEventListener("scroll", handleScrollPercentage);
-
+        const scrollableDiv = scrollableDivRef.current;
+        if (scrollableDiv) {
+            scrollableDiv.addEventListener("scroll", handleScrollPercentage);
+        }
         return () => {
-            window.removeEventListener("scroll", () => {});
+            if (scrollableDiv) {
+                scrollableDiv.removeEventListener("scroll", handleScrollPercentage);
+            }
         };
-    });
+    }, [data]);
 
     if (loading) {
         return (
@@ -71,13 +85,20 @@ function ScrollIndicator({ url }) {
                 <div className="scroll-nav">
                     <h1>Custom Scroll Indicator</h1>
                 </div>
-                <div className="scroll-progress-bar">&nbsp;</div>
-                <div className="scroll-data">
-                    {data && data.length > 0 ? data.map((dataItem) => <p key={dataItem.id}>{dataItem.title}</p>) : null}
+                <div className="scroll-progress-bar">
+                    <div style={{ width: `${scrollPercentage}%` }} className="scroll-progress-indicator"></div>
                 </div>
+                {data && data.length > 0 ? (
+                    <ProductDataContainer ref={scrollableDivRef} data={data}></ProductDataContainer>
+                ) : null}
+                {/* <div>{"Scroll Percentage - " + Math.ceil(scrollPercentage)}</div> */}
             </div>
         </div>
     );
 }
+
+ScrollIndicator.propTypes = {
+    url: PropTypes.string,
+};
 
 export default ScrollIndicator;

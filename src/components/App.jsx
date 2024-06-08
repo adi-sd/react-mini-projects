@@ -33,7 +33,7 @@ function App() {
             {/* Dark Mode */}
             {/* <DarkMode></DarkMode> */}
             {/* Custom Scroll Indicator */}
-            <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}></ScrollIndicator>
+            <ScrollIndicator url={"https://dummyjson.com/products?limit=200"}></ScrollIndicator>
         </div>
     );
 }
