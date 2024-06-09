@@ -8,6 +8,7 @@ import SideMenu from "./side-menu/SideMenu";
 import QrCodeGenerator from "./qr-code-generator/QrCodeGenerator";
 import DarkMode from "./dark-mode/DarkMode";
 import ScrollIndicator from "./scroll-indicator/ScrollIndicator";
+import CustomTabsTest from "./custom-tabs/CustomTabsTest.test";
 
 function App() {
     return (
@@ -33,7 +34,9 @@ function App() {
             {/* Dark Mode */}
             {/* <DarkMode></DarkMode> */}
             {/* Custom Scroll Indicator */}
-            <ScrollIndicator url={"https://dummyjson.com/products?limit=200"}></ScrollIndicator>
+            {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=200"}></ScrollIndicator> */}
+            {/* Custom Tabs */}
+            <CustomTabsTest></CustomTabsTest>
         </div>
     );
 }
